@@ -47,6 +47,9 @@ const regex = new RegExp("^[a-zA-Z]+@[a-zA-Z]+.[a-zA-Z]+$");
 // @ matches single instance of @ sign
 // . matches single instance of . sign
 // $ end of string
+
+//use regexp test method to validate an email address
+// return true if valid else return false
 console.log(regex.test(myEmail));
 
 // 7. You are given an assignmentDate as a string in the format "month/day/year"
@@ -82,10 +85,10 @@ let year = dueDate.getFullYear();
 let monthNum = dueDate.getMonth()+ 1;
 let monthName = months[dueDate.getMonth()];
 let day = dueDate.getDate();
+// add leading 0 in day and month
+let formatted_date = `${year}-${monthNum.toString().padStart(2,'0')}-${day.toString().padStart(2, '0')}`;
 
-let formatted_date = `${year}-${monthNum}-${day}`;
-
-let htmlStr = `<time datetime="${formatted_date} ">${monthName} ${day}, ${year}</time>`;
+let htmlStr = `<time datetime="${formatted_date} ">${monthName} ${day.toString().padStart(2, '0')}, ${year}</time>`;
 
 // 10. log this value using console.log
 console.log(htmlStr);
